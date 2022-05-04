@@ -4,7 +4,8 @@ from django.db import models
 
 
 class Url(models.Model):
-    urlString = models.CharField(max_length=300, null=False)
+    url_string = models.CharField(max_length=300, null=False)
+    shortened_url=models.TextField(max_length=100, null=True)
 
     def __str__(self):
-        return self.urlString
+        return f'{self.url_string} {self.shortened_url}'

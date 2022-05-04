@@ -13,5 +13,11 @@
       {% csrf_token %} {{ form.as_p }}
       <input type="submit" value="Shorten" />
     </form>
+    <ul>
+      {%for url in urls%}
+      <li><a href="{{url.url_string}}">{{url.shortened_url}}</a></li>
+
+      {%endfor%}
+    </ul>
   </body>
 </html>
