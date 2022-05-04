@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,5 +9,9 @@
   </head>
   <body>
     <h1>URL Shortener</h1>
+    <form style="display: flex; align-items: center" method="POST">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" value="Shorten" />
+    </form>
   </body>
 </html>
